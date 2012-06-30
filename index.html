@@ -182,7 +182,7 @@ and open the template in the editor.
             </div>
             <div class="row">
 <div class="span12">
-    <ul class="thumbnails" id="hoge">
+    <ul class="thumbnails" id="regions">
     </ul>
 </div>
 
@@ -240,7 +240,7 @@ and open the template in the editor.
                 })
                 $.getJSON("shussei.json", null, function(data, status){
                     for(var key in data["datas"]){
-                        $("#hoge").append('<li class="span3"><div class="thumbnail"><img src="img/45.png"><div class="caption"><a href="#"><h4>' + data["datas"][key]["name"] + '</h4></a><p>今月は、' + data["datas"][key]["values"][0][1] + '人の新しい命が産まれました！</p><p><a href="#" class="btn btn-primary" data-bitly-type="bitly_hover_card">Action</a> <a href="#" class="btn" data-bitly-type="bitly_hover_card">Action</a></p></div></div></li>');
+                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/45.png"><div class="caption"><a href="#"><h4>' + data["datas"][key]["name"] + '</h4></a><p>今月は、' + data["datas"][key]["values"][0][1] + '人の新しい命が産まれました！</p><p><a href="#" class="btn btn-primary" data-bitly-type="bitly_hover_card">Action</a> <a href="#" class="btn" data-bitly-type="bitly_hover_card">Action</a></p></div></div></li>');
                     }
                 });
             });
