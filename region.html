@@ -151,38 +151,14 @@ and open the template in the editor.
                     <hr/>
                 </div>
             </div>
-
-
-            <div class="row">
-              <div class="span12">
-
-<div class="hero-unit">
-  <!--<h1>選択</h1>-->
-  <div class="row">
-    <div class="span6">
-    <p>
-      <img src="img/miyagi.png" width="400">
-    </p>
-    </div>
-    <div class="span4">
-      <img src="img/suji.png" style="margin-top: 350px;">
-    </div>
-  </div>
-</div>
-
-              </div>
-            </div>
-
-
-
             <div class="row">
                 <div class="span12">
-                    <h3>List</h3>
+                    <h3>Graph</h3>
                 </div>
             </div>
             <div class="row">
 <div class="span12">
-    <ul class="thumbnails" id="regions">
+    <ul class="thumbnails" id="graph">
     </ul>
 </div>
 
@@ -233,15 +209,20 @@ and open the template in the editor.
         </div>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
             $(document).ready(function(){
                 $('.carousel').carousel({
                     interval: 2000
                 })
                 $.getJSON("shussei.json", null, function(data, status){
-                    for(var key in data["datas"]){
-                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/45.png"><div class="caption"><a href="region.html"><h4>' + data["datas"][key]["name"] + '</h4></a><p>今月は、' + data["datas"][key]["values"][0][1] + '人の新しい命が産まれました！</p><p><a href="region.html" class="btn btn-primary" data-bitly-type="bitly_hover_card">Action</a> <a href="#" class="btn" data-bitly-type="bitly_hover_card">Action</a></p></div></div></li>');
-                    }
+                    var visualizeData = google.visualization.arrayToDataTable(data["datas"]["0"]["values"]);
+                    var options = {
+                        title: '青葉区の毎月の出生数'
+                    };
+                    var chart = new google.visualization.LineChart(document.getElementById('graph'));
+                    chart.draw(visualizeData, options);
                 });
             });
         </script>
