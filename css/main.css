@@ -1,0 +1,252 @@
+/* 
+    Document   : style
+    Created on : Mar 3, 2012, 7:04:15 PM
+    Author     : gieart
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body{
+    background-image: url("../img/bg-main.jpg");
+}   
+.span12, .container{
+    width: 940px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+.main{
+    background-color: #FFF;
+    border: 1px solid #ECEDEE;
+    padding: 25px;
+
+}
+
+.main-nav{
+    background-color: #FFF;
+}
+
+.footer-box{
+    margin-left: 0;  
+}
+.footer h4{
+    margin-top: 8px;
+}
+
+.logo{
+    height: 90px;
+}
+
+.logo-title{
+    font-size:30px;
+}
+
+.slogan{
+    color: #999;	
+}
+
+.links a{
+    margin-right: 5px;
+}
+
+/* vertical-menu - the side bar*/
+.vertical-menu {
+    margin-top: -5px;
+    margin-left: 5px;
+    min-height: 500px;
+}
+.vertical-menu ul {
+    list-style: none;
+    margin: 0;
+}
+.vertical-menu > ul > li {
+    padding: 8px 8px 8px 0px;
+}
+.vertical-menu > ul > li + li {
+    border-top: 1px solid #EEEEEE;
+}
+.vertical-menu > ul > li > a {
+    text-decoration: none;
+}
+.vertical-menu > ul > li > a:hover{
+    text-decoration: none;
+    background: none;
+}
+.vertical-menu > ul > li ul {
+    display: none;
+}
+.vertical-menu > ul > li a.active {
+    font-weight: bold;
+}
+.vertical-menu > ul > li a.active + ul {
+    display: block;
+}
+.vertical-menu > ul > li ul > li {
+    padding: 5px 5px 0px 10px;
+}
+.vertical-menu > ul > li ul > li > a {
+    text-decoration: none;
+    display: block;
+}
+.vertical-menu > ul > li ul > li > a.active {
+    font-weight: bold;
+}
+
+.related_posts{
+
+}
+
+.related_posts {
+    margin-top: -5px;
+    margin-left: 5px;
+
+}
+.related_posts ul {
+    list-style: none;
+    margin: 0;
+}
+.related_posts > ul > li {
+    padding: 8px 8px 8px 0px;
+}
+.related_posts > ul > li + li {
+    border-top: 1px solid #EEEEEE;
+}
+.related_posts > ul > li > a {
+    text-decoration: none;
+}
+.related_posts > ul > li > a:hover{
+    text-decoration: none;
+    background: none;
+}
+.related_posts > ul > li ul {
+    display: none;
+}
+.related_posts > ul > li a.active {
+    font-weight: bold;
+}
+.related_posts > ul > li a.active + ul {
+    display: block;
+}
+.related_posts > ul > li ul > li {
+    padding: 5px 5px 0px 10px;
+}
+.related_posts > ul > li ul > li > a {
+    text-decoration: none;
+    display: block;
+}
+.related_posts > ul > li ul > li > a.active {
+    font-weight: bold;
+}
+
+.single {
+    width: 695px;
+}
+
+
+.navbar .btn.search_btn {
+    margin-top:1px;
+}
+
+.carousel-inner {
+    height: 450px;
+}
+.carousel-caption {
+    bottom: -77px;
+}
+
+.service-box{
+    border: 1px solid #EFEFEF;
+    padding: 10px;
+}
+
+
+
+.customer_service {
+    text-align:right;
+    font-size:13px;
+}
+
+.table td.center_text{
+    text-align:center;
+}
+
+#news-box {
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+
+#news-box li{
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 20px;
+    margin-left: -25px;
+}
+
+#news-box span{
+    color : #999999;
+}
+
+.desc{
+    color: #999999;
+    font-size: 11px;
+
+}
+
+.post-count{
+    color: #999999;
+}
+
+.search {
+    float: left;
+    overflow: hidden;
+    width: 210px;
+    margin-left: 0;
+}
+
+.text-search{
+    width: 155px;
+}
+
+.blog-intro {
+    margin-left: 0;
+}
+
+.entry img{
+    float:left;
+    margin: 5px 10px 0 10px;
+}
+
+.page-title-container{
+    position: relative;
+    z-index: 5;
+}
+
+.fixed:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.inner-page-title {
+    background: url("../img/bg-slider.png") repeat scroll left top transparent;
+    height: 155px;
+    left: 0;
+    overflow: hidden;
+    padding: 65px 25px 0;
+    position: absolute;
+    top: 0;
+    width: 170px;
+    color: #FFF;
+}
+
+.fixed {
+    min-height: 1%;
+}
+
+.fixed {
+    display: block;
+}
