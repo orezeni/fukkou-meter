@@ -161,7 +161,7 @@ and open the template in the editor.
   <div class="row">
     <div class="span6">
     <p>
-      <a href="region.html#1"><img id="miyagimap" src="img/miyagimap_off.png" width="400"></a>
+      <a href="region.html#0"><img id="miyagimap" src="img/miyagimap_off.png" width="400"></a>
     </p>
     </div>
     <div class="span4">
@@ -249,7 +249,7 @@ $("#miyagimap").hover(
                     for(var key in data["datas"]){
 
 
-                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html#'+ data["datas"][key]['id'] +'"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>' + data["datas"][key]["values"][0][1] + '人</strong>の新しい命が産まれました！</p>');
+                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html#'+ data["datas"][key]['id'] +'"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>' + data["datas"][key]["values"][14][1] + '人</strong>の新しい命が産まれました！</p>');
                     }
                 });
             });
