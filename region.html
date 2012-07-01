@@ -273,7 +273,7 @@ and open the template in the editor.
                 $('.carousel').carousel({
                     interval: 2000
                 })
-                $.getJSON("shussei.json", null, function(data, status){
+                $.getJSON("shussei_sum.json", null, function(data, status){
                     var visualizeData = google.visualization.arrayToDataTable(data["datas"]["0"]["values"]);
                     var options = {
                         title: '青葉区の毎月の出生数'
