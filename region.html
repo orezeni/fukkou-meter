@@ -157,8 +157,8 @@ and open the template in the editor.
 
               <div class="span12">
                 <div class="hero-unit" style="background-color: #e7fc00;">
-                  <h2 style="text-align: center">宮城県仙台市 2012年4月の出生者数</h2>
-                  <h1 style="text-align: center">45人</h1>
+                  <h2 id="title" style="text-align: center"></h2>
+                  <h1 id="numborn" style="text-align: center"></h1>
                 </div>
               </div>
             </div>
@@ -277,12 +277,44 @@ and open the template in the editor.
                 $.getJSON("shussei_sum.json", null, function(data, status){
                     var visualizeData = google.visualization.arrayToDataTable(data["datas"]["0"]["values"]);
                     var options = {
-                        title: '青葉区の毎月の出生数'
+                        title: '毎月の出生数'
                     };
                     var chart = new google.visualization.LineChart(document.getElementById('graph'));
                     chart.draw(visualizeData, options);
+
+
+
                 });
+                $.getJSON("shussei.json", null, function(data, status){
+                    var index = location.hash.slice(1);
+                    console.log(index);
+                    var dom = data["datas"][index]['values'];
+
+                    console.log(dom[14]);
+
+
+                    $("#numborn").text(dom[14][1]+"人");
+
+                    $("#title").text("宮城県"+ data["datas"][index]['name'] +" 2012年5月の出生者数");
+
+                });
+
+
+
+
+
             });
+
+            
+
+
+
+
+
+
+
+
+
         </script>
 
 
