@@ -157,7 +157,6 @@ and open the template in the editor.
               <div class="span12">
 
 <div class="hero-unit" style="padding-top: 10px; padding-bottom: 10px;">
-  <!--<h1>選択</h1>-->
   <div class="row">
     <div class="span6">
     <p>
@@ -165,7 +164,10 @@ and open the template in the editor.
     </p>
     </div>
     <div class="span4">
-      <img src="img/suji.png" style="margin-top: 350px;">
+      <div style="margin-top: 300px;">
+          <h2>宮城県全体</h2>
+          <h1 id="total">人</h1>
+      </div>
     </div>
   </div>
 </div>
@@ -242,6 +244,7 @@ $("#miyagimap").hover(
 );
 
             $(document).ready(function(){
+                var sum = 0;
                 $('.carousel').carousel({
                     interval: 5000
                 });
@@ -250,7 +253,10 @@ $("#miyagimap").hover(
 
 
                         $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html#'+ data["datas"][key]['id'] +'"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>' + data["datas"][key]["values"][14][1] + '人</strong>の新しい命が産まれました！</p>');
+                    sum += data["datas"][key]["values"][14][1];
+
                     }
+                    $("#total").text(sum + "人");
                 });
             });
         </script>
