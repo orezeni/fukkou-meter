@@ -34,7 +34,7 @@ and open the template in the editor.
 <!--
                             <h4><small>XXXXXX</strong></small></h4>
 -->
-<img src="img/30year.png" style="margin-bottom: 10px;">
+<img src="img/right.png" style="margin-bottom: 10px;">
 
                         </div>
                     </div>
@@ -156,7 +156,7 @@ and open the template in the editor.
             <div class="row">
               <div class="span12">
 
-<div class="hero-unit">
+<div class="hero-unit" style="padding-top: 10px; padding-bottom: 10px;">
   <!--<h1>選択</h1>-->
   <div class="row">
     <div class="span6">
@@ -176,9 +176,6 @@ and open the template in the editor.
 
 
             <div class="row">
-                <div class="span12">
-                    <h3>List</h3>
-                </div>
             </div>
             <div class="row">
 <div class="span12">
@@ -234,6 +231,16 @@ and open the template in the editor.
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript">
+
+$("#miyagimap").hover(
+  function () {
+    $(this).attr('src','img/miyagimap_on.png');
+  },
+  function () {
+    $(this).attr('src','img/miyagimap_off.png');
+  }
+);
+
             $(document).ready(function(){
                 $('.carousel').carousel({
                     interval: 5000
@@ -242,7 +249,7 @@ and open the template in the editor.
                     for(var key in data["datas"]){
 
 
-                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、' + data["datas"][key]["values"][0][1] + '人の新しい命が産まれました！</p>');
+                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>' + data["datas"][key]["values"][0][1] + '人</strong>の新しい命が産まれました！</p>');
                     }
                 });
             });
