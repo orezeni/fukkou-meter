@@ -24,7 +24,7 @@ and open the template in the editor.
                     <span class="slogan">今月生まれた新しい命</span>
 -->
 <h1>
-<img src="img/baby.png">
+<a href="index.html"><img src="img/baby.png"></a>
 </h1>
 
                 </div>
@@ -185,12 +185,12 @@ and open the template in the editor.
               </div>
             </div>
             <div class="row">
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/03"></div>
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/02"></div>
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/01"></div>
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/12"></div>
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/11"></div>
-              <div class="span2"><img src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/10"></div>
+              <div class="span2"><img class="backnumber" target="1" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/04"></div>
+              <div class="span2"><img class="backnumber" target="2" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/03"></div>
+              <div class="span2"><img class="backnumber" target="3" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/02"></div>
+              <div class="span2"><img class="backnumber" target="4" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/01"></div>
+              <div class="span2"><img class="backnumber" target="5" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/12"></div>
+              <div class="span2"><img class="backnumber" target="6" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/11"></div>
             </div>
 
 
@@ -270,12 +270,16 @@ and open the template in the editor.
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
             google.load("visualization", "1", {packages:["corechart"]});
+            var a = location.hash.split("_");
+            var index = a[0].slice(1);
+            var target = a[1] ? a[1] : 0;
+            console.log(index);
+            console.log(target);
             $(document).ready(function(){
                 $('.carousel').carousel({
                     interval: 2000
                 })
                 $.getJSON("shussei_sum.json", null, function(data, status){
-                    var index = location.hash.slice(1);
                     var visualizeData = google.visualization.arrayToDataTable(data["datas"][index]["values"]);
                     var options = {
                         title: '毎月の出生数'
@@ -287,21 +291,20 @@ and open the template in the editor.
 
                 });
                 $.getJSON("shussei.json", null, function(data, status){
-                    var index = location.hash.slice(1);
-                    console.log(index);
                     var dom = data["datas"][index]['values'];
 
-                    console.log(dom[14]);
+                    console.log(dom[14 - target]);
 
 
-                    $("#numborn").text(dom[14][1]+"人");
+                    $("#numborn").text(dom[14 - target][1]+"人");
 
-                    $("#title").text("宮城県"+ data["datas"][index]['name'] +" 2012年5月の出生者数");
+                    $("#title").text("宮城県"+ data["datas"][index]['name'] +" 2012年" + (5 - target) +  "月の出生者数");
 
                 });
 
-
-
+               $(".backnumber").click(function(){
+                 location.href = "region.html?dummy=" + Math.floor( Math.random() * 100 ) + "#" + index + "_"  + $(this).attr("target");
+               });
 
 
             });
