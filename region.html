@@ -298,7 +298,16 @@ and open the template in the editor.
 
                     $("#numborn").text(dom[14 - target][1]+"人");
 
-                    $("#title").text("宮城県"+ data["datas"][index]['name'] +" 2012年" + (5 - target) +  "月の出生者数");
+
+
+var tmp = new Date();
+tmp.setMonth( tmp.getMonth() -1 - target );
+var year = tmp.getFullYear();
+var mon = tmp.getMonth();
+
+
+
+                    $("#title").text("宮城県"+ data["datas"][index]['name'] + year + "年" + mon +  "月の出生者数");
 
                 });
 
