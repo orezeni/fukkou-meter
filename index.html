@@ -91,7 +91,7 @@ and open the template in the editor.
                 <div class="span12">
 
 
-                    <div id="myCarousel" class="carousel slide">
+                    <div id="myCarousel" class="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img alt="" src="img/1.jpg" />
@@ -245,9 +245,6 @@ $("#miyagimap").hover(
 
             $(document).ready(function(){
                 var sum = 0;
-                $('.carousel').carousel({
-                    interval: 5000
-                });
                 $.getJSON("shussei.json", null, function(data, status){
                     for(var key in data["datas"]){
 
