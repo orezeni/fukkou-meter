@@ -6,7 +6,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-        <title>BootCompany : Company Profile Html and CSS Template built with Bootstrap Twitter</title>
+        <title>復興メーター：赤ちゃんグラフ</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/main.css" rel="stylesheet"/>
@@ -92,7 +92,7 @@ and open the template in the editor.
                 <div class="span12">
 
 
-                    <div id="myCarousel" class="carousel slide">
+                    <div id="myCarousel" class="carousel">
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img alt="" src="img/1.jpg" />
@@ -212,18 +212,13 @@ and open the template in the editor.
                 <div class="row">
 
                     <div class="span3">
-                        <h4>&COPY; 2012 BootCompany</h4><br/>
+                        <h4>&COPY; 復興メーターハッカソンチーム</h4><br/>
                         All right are reserved.<br/>
                         <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
                     </div>
                     <div class="span3">
                         <h4>Contact Info</h4>
                         <br/>
-                        <p>
-                            123 Make Believe Drive<br/>
-                            Some City, P.O 54990, Country<br/>
-                            T: +00 1234 5678
-                        </p>
                     </div>
 
                     <div class="span3">
@@ -269,6 +264,11 @@ and open the template in the editor.
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
+
+
+
+
+
             google.load("visualization", "1", {packages:["corechart"]});
             var a = location.hash.split("_");
             var index = a[0].slice(1);
@@ -276,9 +276,6 @@ and open the template in the editor.
             console.log(index);
             console.log(target);
             $(document).ready(function(){
-                $('.carousel').carousel({
-                    interval: 5000
-                })
                 $.getJSON("shussei_sum.json", null, function(data, status){
                     var visualizeData = google.visualization.arrayToDataTable(data["datas"][index]["values"]);
                     var options = {
