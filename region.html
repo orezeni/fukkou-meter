@@ -185,12 +185,21 @@ and open the template in the editor.
               </div>
             </div>
             <div class="row">
-              <div class="span2"><img class="backnumber" target="1" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/04"></div>
-              <div class="span2"><img class="backnumber" target="2" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/03"></div>
-              <div class="span2"><img class="backnumber" target="3" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/02"></div>
-              <div class="span2"><img class="backnumber" target="4" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/01"></div>
-              <div class="span2"><img class="backnumber" target="5" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/12"></div>
-              <div class="span2"><img class="backnumber" target="6" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/11"></div>
+              <div class="span2"><img class="backnumber" target="1" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/05"></div>
+              <div class="span2"><img class="backnumber" target="2" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/04"></div>
+              <div class="span2"><img class="backnumber" target="3" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/03"></div>
+              <div class="span2"><img class="backnumber" target="4" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/02"></div>
+              <div class="span2"><img class="backnumber" target="5" src="http://placehold.it/150x150/e8117f/ffffff/&text=2012/01"></div>
+              <div class="span2"><img class="backnumber" target="6" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/12"></div>
+              <div class="span2"><img class="backnumber" target="7" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/11"></div>
+              <div class="span2"><img class="backnumber" target="8" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/10"></div>
+              <div class="span2"><img class="backnumber" target="9" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/09"></div>
+              <div class="span2"><img class="backnumber" target="10" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/08"></div>
+              <div class="span2"><img class="backnumber" target="11" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/07"></div>
+              <div class="span2"><img class="backnumber" target="12" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/06"></div>
+              <div class="span2"><img class="backnumber" target="13" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/05"></div>
+              <div class="span2"><img class="backnumber" target="14" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/04"></div>
+              <div class="span2"><img class="backnumber" target="15" src="http://placehold.it/150x150/e8117f/ffffff/&text=2011/03"></div>
             </div>
 
 
@@ -248,26 +257,12 @@ and open the template in the editor.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
 
-
-
-
+            var targetmonth = 15;
 
             google.load("visualization", "1", {packages:["corechart"]});
             var a = location.hash.split("_");
@@ -283,19 +278,14 @@ and open the template in the editor.
                     };
                     var chart = new google.visualization.LineChart(document.getElementById('graph'));
                     chart.draw(visualizeData, options);
-
-
-
                 });
                 $.getJSON("shussei.json", null, function(data, status){
                     var dom = data["datas"][index]['values'];
 
-                    console.log(dom[14 - target]);
+                    console.log(dom[targetmonth - target]);
 
 
-                    $("#numborn").text(dom[14 - target][1]+"人");
-
-
+                    $("#numborn").text(dom[targetmonth - target][1]+"人");
 
 var tmp = new Date();
 tmp.setMonth( tmp.getMonth() -1 - target );
@@ -303,8 +293,7 @@ var year = tmp.getFullYear();
 var mon = tmp.getMonth();
 
 
-
-                    $("#title").text("宮城県"+ data["datas"][index]['name'] + year + "年" + mon +  "月の出生者数");
+                    $("#title").text("宮城県"+ data["datas"][index]['name'] + year + "年" + mon +  "月時点の出生者数");
 
                 });
 
@@ -314,24 +303,8 @@ var mon = tmp.getMonth();
 
 
             });
-
             
-
-
-
-
-
-
-
-
-
         </script>
-
-
-
-
-
-
     </body>
 </html>
 
