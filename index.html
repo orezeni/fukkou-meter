@@ -239,14 +239,18 @@ $("#miyagimap").hover(
   }
 );
 
-            $(document).ready(function(){
+            $(document).ready(function(){ 
+                var targetmonth = 15;
                 var sum = 0;
                 $.getJSON("shussei.json", null, function(data, status){
                     for(var key in data["datas"]){
 
 
-                        $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' +data["datas"][key]['id']+  '.png" width="80" height="80"><div class="caption"><a href="region.html#'+ data["datas"][key]['id'] +'"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>' + data["datas"][key]["values"][14][1] + '人</strong>の新しい命が産まれました！</p>');
-                    sum += data["datas"][key]["values"][15][1];
+                      $("#regions").append('<li class="span3"><div class="thumbnail"><img src="img/icon' 
+                      +data["datas"][key]['id'] +  '.png" width="80" height="80"><div class="caption"><a href="region.html#'
+                      + data["datas"][key]['id'] +'"><h2>' + data["datas"][key]["name"] + '</h2></a><p>先月は、<strong>'
+                      + data["datas"][key]["values"][targetmonth][1] + '人</strong>の新しい命が産まれました！</p>');
+                    sum += data["datas"][key]["values"][targetmonth][1];
 
                     }
                     $("#total").text(sum + "人");
